@@ -15,7 +15,19 @@ context('Fitur Login', () => {
         })
     })
 
-    it('Input Account is Correct', () =>{
+    it('Do Login With Null Values', () =>{
+        cy.get('.header-nav-container > :nth-child(2) > :nth-child(2)').click()
+        cy.wait(4000)
+        
+        // When Button is Disable
+        cy.get('#btn-login').should('be.disabled')
+        
+        // // When Button is Not Disable
+
+        cy.wait(4000)
+    })
+
+    it('Do Login With Correct Values', () =>{
         cy.get('.header-nav-container > :nth-child(2) > :nth-child(2)').click()
         cy.wait(4000)
 
@@ -26,7 +38,7 @@ context('Fitur Login', () => {
         cy.wait(4000)
     })
 
-    it('Input Account is Incorrect (Password)', ()=>{
+    it('Do Login With Wrong Values (Password)', ()=>{
         cy.get('.header-nav-container > :nth-child(2) > :nth-child(2)').click()
         cy.wait(4000)
 
@@ -37,7 +49,7 @@ context('Fitur Login', () => {
         cy.wait(4000)
     })
 
-    it('Input Account is Incorrect (Email)', ()=>{
+    it('Do Login With Wrong Values (Email)', ()=>{
         cy.get('.header-nav-container > :nth-child(2) > :nth-child(2)').click()
         cy.wait(4000)
 
