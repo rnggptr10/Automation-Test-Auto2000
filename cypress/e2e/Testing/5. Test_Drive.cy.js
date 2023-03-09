@@ -82,6 +82,8 @@ context('Testing Test Drive Digiroom Auto2000', () => {
         //Validasi Keberhasilan Booking Test Drive
         cy.contains('Pemesanan Test Drive')
         cy.contains('Booking telah diproses Staf kami akan segera menghubungi Anda')
+
+        //Masih butuh penyempurnaan agar hasil akhir tidak site improving
     })
 
 })
