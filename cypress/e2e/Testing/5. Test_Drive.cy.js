@@ -4,6 +4,7 @@ context('Testing Test Drive Digiroom Auto2000', () => {
     beforeEach('',() => {
         cy.viewport(1280,1080)
         cy.visit('https://auto2000.co.id/')
+        cy.get('.close > img').click({force:true})
         Cypress.on('uncaught:exception', (err, runnable) => {
             // returning false here prevents Cypress from
             // failing the test
@@ -20,7 +21,7 @@ context('Testing Test Drive Digiroom Auto2000', () => {
     it('Pemesanan Test Drive', () => {
 
         //Membuka Halaman Test Drive
-        cy.get(':nth-child(9) > .categoryContainer').click()
+        cy.get(':nth-child(9) > .categoryContainer').click({force:true})
         cy.url().should('eq', 'https://auto2000.co.id/c/testdrive-toyota')
         cy.wait(200)
 
@@ -58,12 +59,12 @@ context('Testing Test Drive Digiroom Auto2000', () => {
         cy.wait(200)
 
         //Memilih Tanggal 
-        cy.get(':nth-child(3) > :nth-child(5) > .ui-state-default').click({force:true})
+        cy.get(':nth-child(4) > :nth-child(2) > .ui-state-default').click({force:true})
 
         //Memilih Waktu 
         cy.get('#slotTime-button').click({force:true})
         cy.wait(200)
-        cy.get('#slotTime-menu').contains('09:00 - 12:00') .click({force:true})
+        cy.get('#slotTime-menu').contains(' 09:00 - 12:00') .click({force:true})
         cy.wait(200)
 
         //Mengisi Data
@@ -76,7 +77,7 @@ context('Testing Test Drive Digiroom Auto2000', () => {
         cy.wait(200)
         cy.get('.modal-content > .terms-box-container > .terms-action-container > #tcclose').click()
         cy.wait(1000)
-        cy.get('#btn-testDrive-bookNow-pdpNewCar').click()
+        cy.get('#btn-testDrive-bookNow-pdpNewCar').click({force:true})
         cy.wait(1000)
 
         //Validasi Keberhasilan Booking Test Drive
