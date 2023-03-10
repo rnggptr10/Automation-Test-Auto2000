@@ -3,7 +3,7 @@
 context('Testing Test Drive Digiroom Auto2000', () => {
     beforeEach('',() => {
         cy.viewport(1280,1080)
-        cy.visit('https://auto2000.co.id/')
+        cy.visit('https://sit.auto2000.co.id/')
         cy.get('.close > img').click({force:true})
         Cypress.on('uncaught:exception', (err, runnable) => {
             // returning false here prevents Cypress from
@@ -22,12 +22,12 @@ context('Testing Test Drive Digiroom Auto2000', () => {
 
         //Membuka Halaman Test Drive
         cy.get(':nth-child(9) > .categoryContainer').click({force:true})
-        cy.url().should('eq', 'https://auto2000.co.id/c/testdrive-toyota')
+        cy.url().should('eq', 'https://sit.auto2000.co.id/c/testdrive-toyota')
         cy.wait(200)
 
         //Klik Test Drive (Memilih Agya)
         cy.get('[data-product-code="AGYA"] > .plp-box > .item-align-center > #btn-testDrive-pdpNewCar').click()
-        cy.url().should('eq', 'https://auto2000.co.id/testdrive/new-car/agya')
+        cy.url().should('eq', 'https://sit.auto2000.co.id/testdrive/new-car/agya')
         cy.wait(500)
 
         // //Ganti Provinsi (Memilih Bekasi Jawa Barat)
