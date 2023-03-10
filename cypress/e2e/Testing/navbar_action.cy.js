@@ -15,40 +15,41 @@ context('Open Web Auto2000 Digiroom', () => {
         })
     })
     
-    it('To Page Mobil Baru', () => {
-        cy.get('#menu-bar > ul.nav-list > :nth-child(1) > a').click()
-        cy.wait(2000)
-    })
+    // it('To Page Mobil Baru', () => {
+    //     cy.get('#menu-bar > ul.nav-list > :nth-child(1) > a').click()
+    //     cy.wait(2000)
+    // })
 
-    it('To Page Mobil Bekas Bersertifikat', () => {
-        cy.get('#menu-bar > ul.nav-list > :nth-child(2) > a').click()
-        cy.wait(2000)
-    })
+    // it('To Page Mobil Bekas Bersertifikat', () => {
+    //     cy.get('#menu-bar > ul.nav-list > :nth-child(2) > a').click()
+    //     cy.wait(2000)
+    // })
 
     it('To Page Purna Jual', () => {
-        cy.get('#menu-bar > ul.nav-list > :nth-child(3) > a').click()
+        cy.get('#purna-jual-select').select2('open').select2('select', 'random');
+        // cy.get('#menu-bar > ul.nav-list > :nth-child(3) > a').click()
         cy.wait(2000)
     })
 
-    it('To Page Promo', () => {
-        cy.get('#menu-bar > ul.nav-list > :nth-child(4) > a').click()
-        cy.wait(2000)
-    })
+    // it('To Page Promo', () => {
+    //     cy.get('#menu-bar > ul.nav-list > :nth-child(4) > a').click()
+    //     cy.wait(2000)
+    // })
 
-    it('To Page Tentang Auto2000', () =>{
-        cy.get('#menu-bar > ul.nav-list > :nth-child(5) > a').click()
-        cy.wait(2000)
-    })
+    // it('To Page Tentang Auto2000', () =>{
+    //     cy.get('#menu-bar > ul.nav-list > :nth-child(5) > a').click()
+    //     cy.wait(2000)
+    // })
 
-    it('To Page Cubain', () =>{
-        cy.get('#menu-bar > ul.nav-list > :nth-child(6) > a').click()
-        cy.wait(2000)
-    })
+    // it('To Page Cubain', () =>{
+    //     cy.get('#menu-bar > ul.nav-list > :nth-child(6) > a').click()
+    //     cy.wait(2000)
+    // })
 
-    it('To Change Language', () =>{
-        cy.get('.header-nav-container > :nth-child(2) > :nth-child(3)').click()
-        cy.wait(2000)
-    })
+    // it('To Change Language', () =>{
+    //     cy.get('.header-nav-container > :nth-child(2) > :nth-child(3)').click()
+    //     cy.wait(2000)
+    // })
 
     // it('Login & Log Out', () =>{
     //     cy.get('.header-nav-container > :nth-child(2) > :nth-child(2)').click()

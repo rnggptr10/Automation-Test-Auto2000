@@ -1,5 +1,6 @@
 # Automation-Test-Auto2000
 
+<<<<<<< HEAD
 Link Spreedsheet Test-Case : https://docs.google.com/spreadsheets/d/1OLbRBdHC9_jzh48AJWe_O_lJiotIac35Z8ydhed4KIg/edit?usp=sharing
 
 FITUR-FITUR DIGIROOM AUTO2000 YANG HARUS DI TEST : 
@@ -28,3 +29,8 @@ TAMBAHAN :
 7. SUBSCRIBE
 8. HUBUNGI KAMI (FOOTER)
 9. DEALER TOYOTA (FOOTER)
+=======
+PPP
+Link Spreedsheet Test-Case : https://docs.google.com/spreadsheets/d/1OLbRBdHC9_jzh48AJWe_O_lJiotIac35Z8ydhed4KIg/edit?usp=sharing
+Link Eksplorasi Github : https://www.w3schools.com/git/
+>>>>>>> 8b3267ef311d59ac5620a61e5cfd6f2e3b24dfe4
