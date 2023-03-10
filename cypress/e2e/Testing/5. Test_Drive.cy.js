@@ -12,17 +12,20 @@ context('Testing Test Drive Digiroom Auto2000', () => {
         })
     })
     
-    // it('Testing Akses Menu Test Drive', () => {
-    //     cy.get(':nth-child(9) > .categoryContainer').click()
-    //     cy.url().should('eq', 'https://auto2000.co.id/c/testdrive-toyota')
-    //     cy.wait(500)
-    // })
+    it('Testing Akses Menu Test Drive', () => {
+        cy.get(':nth-child(9) > .categoryContainer').click()
+        cy.wait(1000)
+        cy.url().should('eq', 'https://uat.auto2000.co.id/c/testdrive-toyota')
+        cy.wait(500)
+    })
 
     it('Pemesanan Test Drive', () => {
 
         //Membuka Halaman Test Drive
         cy.get(':nth-child(9) > .categoryContainer').click()
         cy.wait(1000)
+        cy.url().should('eq', 'https://uat.auto2000.co.id/c/testdrive-toyota')
+        cy.wait(500)
 
         //Klik Test Drive (Memilih Agya)
         cy.get('[data-product-code="ALTIS"] > .plp-box > .item-align-center > #btn-testDrive-pdpNewCar').click()
@@ -58,7 +61,7 @@ context('Testing Test Drive Digiroom Auto2000', () => {
         cy.wait(200)
 
         //Memilih Tanggal 
-        cy.get(':nth-child(4) > :nth-child(2) > .ui-state-default').click({force:true})
+        cy.get(':nth-child(4) > :nth-child(5) > .ui-state-default').click({force:true})
 
         //Memilih Waktu 
         cy.get('#slotTime-button').click({force:true})
