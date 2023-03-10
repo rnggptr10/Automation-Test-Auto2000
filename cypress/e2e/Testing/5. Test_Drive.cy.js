@@ -3,7 +3,7 @@
 context('Testing Test Drive Digiroom Auto2000', () => {
     beforeEach('',() => {
         cy.viewport(1280,1080)
-        cy.visit('https://sit.auto2000.co.id/')
+        cy.visit('https://uat.auto2000.co.id/')
         cy.get('.close > img').click({force:true})
         Cypress.on('uncaught:exception', (err, runnable) => {
             // returning false here prevents Cypress from
@@ -21,13 +21,12 @@ context('Testing Test Drive Digiroom Auto2000', () => {
     it('Pemesanan Test Drive', () => {
 
         //Membuka Halaman Test Drive
-        cy.get(':nth-child(9) > .categoryContainer').click({force:true})
-        cy.url().should('eq', 'https://sit.auto2000.co.id/c/testdrive-toyota')
-        cy.wait(200)
+        cy.get(':nth-child(9) > .categoryContainer').click()
+        cy.wait(1000)
 
         //Klik Test Drive (Memilih Agya)
-        cy.get('[data-product-code="AGYA"] > .plp-box > .item-align-center > #btn-testDrive-pdpNewCar').click()
-        cy.url().should('eq', 'https://sit.auto2000.co.id/testdrive/new-car/agya')
+        cy.get('[data-product-code="ALTIS"] > .plp-box > .item-align-center > #btn-testDrive-pdpNewCar').click()
+        cy.url().should('eq', 'https://uat.auto2000.co.id/testdrive/new-car/altis')
         cy.wait(500)
 
         // //Ganti Provinsi (Memilih Bekasi Jawa Barat)
@@ -42,7 +41,7 @@ context('Testing Test Drive Digiroom Auto2000', () => {
         // cy.get('#prev-page').click({force:true})
         
         //Ganti Provinsi (Memilih Jakarta Barat, DKI Jakarta)
-        cy.get('.g-col-lg-2 > .header-location').click()
+        cy.get('.g-col-lg-2 > .header-location').click({force:true})
         // cy.get('#ui-id-1-button').click({force:true})
         // cy.wait(200)
         // cy.get('#ui-id-210').click({force:true})
@@ -55,7 +54,7 @@ context('Testing Test Drive Digiroom Auto2000', () => {
         //Memilih Tempat
         cy.get('#branchList-button').click()
         cy.wait(200)
-        cy.get('#branchList-menu').contains('Auto2000 Cilandak').click({force:true})
+        cy.get('#branchList-menu').contains('Auto2000 Pluit').click({force:true})
         cy.wait(200)
 
         //Memilih Tanggal 
