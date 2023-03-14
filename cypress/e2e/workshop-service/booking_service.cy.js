@@ -60,7 +60,7 @@ context('Booking Vehicle', () => {
             cy.get('.terms-container > .custom-checkbox > .checkmark').click()
             cy.get('.modal-content > .terms-box-container > .terms-action-container > #tcclose').click()
         }
-        cy.get('#wsStep2').click({force:true})
+        cy.get('#wsStep2').click()
         cy.wait(4000)
     })
 
