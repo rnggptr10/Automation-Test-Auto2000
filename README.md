@@ -23,20 +23,14 @@ FITUR-FITUR DIGIROOM AUTO2000 YANG HARUS DI TEST :
 TAMBAHAN :
 
 1. LANDING PAGE (V)(FARELL)
-<<<<<<< HEAD
 2. LOGIN LOGOUT (V)(FARELL)
 3. TENTANG AUTO2000
 4. PROMO
 5. TASIA
-6. SIMULASI CICILAN (ONPROGRESS)(FARELL)
+6. SIMULASI CICILAN (V)(FARELL)
 7. SUBSCRIBE (V)(FARELL)
 8. HUBUNGI KAMI (FOOTER) (V)(FARELL)
 9. DEALER TOYOTA (FOOTER)
-=======
-PPP
-Link Spreedsheet Test-Case : https://docs.google.com/spreadsheets/d/1OLbRBdHC9_jzh48AJWe_O_lJiotIac35Z8ydhed4KIg/edit?usp=sharing
-Link Eksplorasi Github : https://www.w3schools.com/git/
->>>>>>> 8b3267ef311d59ac5620a61e5cfd6f2e3b24dfe4
 =======
 2. LOGIN (V)(RANGGA)
 3. REGISTER (V)(RANGGA)
