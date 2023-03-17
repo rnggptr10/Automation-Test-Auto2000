@@ -79,7 +79,7 @@ context('Testing Mobil Baru Digiroom Auto2000', () => {
     it('Testing Pembelian Mobil Baru (Avanza)', () => {
 
         //Buka Menu Mobil Baru
-        cy.get('#menu-bar > ul.nav-list > :nth-child(1) > a').click()
+        cy.get('#menu-bar > ul.nav-list > :nth-child(1) > a').click({force: true})
         cy.url().should('eq', 'https://auto2000.co.id/c/mobil-baru-toyota')
         cy.wait(500)
 
