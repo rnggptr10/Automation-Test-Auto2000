@@ -17,7 +17,7 @@ context('Booking Vehicle', () => {
 
     it('Do Search By Filter', () =>{ 
         // Login
-        cy.get('#login-email').type('rangga20004@mail.unpad.ac.id')
+        cy.get('#login-email').type('nurinafasya@gmail.com')
         cy.get('#login-password').type('hahahihi123')
         cy.get('#btn-login').click()
         cy.wait(4000)
@@ -30,16 +30,18 @@ context('Booking Vehicle', () => {
         cy.get('#ui-id-1-button').click()
         cy.get('#ui-id-1-menu').contains('AGYA').click()
         cy.get('#ui-id-2-button').click()
-        cy.get('#ui-id-2-menu').contains('AGYA 1.0 E A/T').click()
+        cy.get('#ui-id-2-menu').contains('AGYA 1.0 E M/T').click()
 
         // Click Button 'Cari'
         cy.get('.button-find-sp > .btn-primary-white').click()
         
         // Click Product
         cy.get(':nth-child(2) > .servicePackage-tile').click()
-
-        // Choose Car
+        
+        // Choose Car (Harus ada If Else )
         cy.get('.test-slides > .add-car-carousel-item').click()
+        cy.wait(4000)
+        
         
         // Kontak Informasi
         // Provisi
@@ -79,9 +81,13 @@ context('Booking Vehicle', () => {
         cy.get('#branch-spsp-menu').contains('Auto2000 Daan Mogot').click()
     
         // Pilih Tanggal Rencana Service
-        cy.get('.ui-datepicker-days-cell-over > .ui-state-default').click()
+        cy.get(':nth-child(3) > :nth-child(4) > .ui-state-default').click()
+        cy.wait(4000)
+        
+        // Harus diperbaiki
+        // Pilih Waktu Jam Rencana Service        
         // cy.get('#slotTime').contains('08:00').click()
-        // Pilih Waktu Jam Rencana Service
+        cy.wait(4000)
 
         // Click CheckBox Term & Condition
         cy.get('.terms-container > .custom-checkbox > .checkmark').click()

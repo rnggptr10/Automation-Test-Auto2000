@@ -1,27 +1,23 @@
 /// <reference types="cypress" />
 
 context('Fitur Login', () => {
-    // data testing
+    // data testing berdasarkan testcase yang berada di spreedsheet
     const userData = [
         {
-            "email" : "rangga20004@mail.unpad.ac.id",
-            "password" : "hahahihi123"
+            "email" : "",
+            "password" : ""
         },
         {
-            "email": "",
-            "password":""
+            "email": "nurinafasya@gmail.com",
+            "password":"hahahaha"
         },
         {
-            "email":"ranggaputra103@gmail.com",
-            "password":"hahahihihehe"
-        },
-        {
-            "email":"rangga20004@mail.ac.id",
+            "email": "nurinafasya111@gmail.com",
             "password":"hahahihi123"
         },
         {
-            "email":"ranggaputra103",
-            "password":"sayangkamu8"
+            "email":"nurinafasya@gmail.com",
+            "password":"hahahihi123"
         }
     ]
 

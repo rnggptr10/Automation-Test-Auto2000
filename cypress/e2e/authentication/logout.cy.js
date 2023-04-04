@@ -1,6 +1,15 @@
 /// <reference types="cypress" />
 
 context('Fitur Login', () => {
+    // Data Testing berdasarkan testcase yang berada di spreedsheet
+    const userData = 
+    {
+        "email" : "nurinafasya@gmail.com",
+        "password" : "hahahihi123"
+    }
+    
+
+
     beforeEach('Open Web',() => {
         // For Set Size Desktop
         cy.viewport(1280,720)
@@ -15,13 +24,14 @@ context('Fitur Login', () => {
         })
     })
 
+
     it('Logout', () =>{
 
-        // Log In 
+        // Log In   
         cy.get('.header-nav-container > :nth-child(2) > :nth-child(2)').click()
         cy.url().should('eq', 'https://uat.auto2000.co.id/login')
-        cy.get('#login-email').type('farellaldi29@gmail.com')
-        cy.get('#login-password').type('mrsilva123')
+        cy.get('#login-email').type(userData.email)
+        cy.get('#login-password').type(userData.password)
         cy.get('#btn-login').click()
         cy.url().should('eq', 'https://uat.auto2000.co.id/')
         cy.wait(500)
