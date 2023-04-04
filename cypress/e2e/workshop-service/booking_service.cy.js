@@ -1,6 +1,16 @@
 /// <reference types="cypress" />
 
 context('Booking Vehicle', () => {
+    // data testing untuk akun user
+    const userData = {
+        "email" : "nurinafasya@gmail.com",
+        "password" : "hahahihi123"
+    }
+
+    const timeData = {
+
+    }
+
     beforeEach('Open Web',() => {
         // For Set Size Desktop
         cy.viewport(1280,720)
@@ -19,8 +29,8 @@ context('Booking Vehicle', () => {
         // Login
         cy.get('.header-nav-container > :nth-child(2) > :nth-child(2)').click()
         cy.wait(4000)
-        cy.get('#login-email').type('rangga20004@mail.unpad.ac.id')
-        cy.get('#login-password').type('hahahihi123')
+        cy.get('#login-email').type(userData.email)
+        cy.get('#login-password').type(userData.password)
         cy.get('#btn-login').click()
         cy.wait(4000)
 
@@ -33,7 +43,7 @@ context('Booking Vehicle', () => {
         cy.wait(4000)
 
         // Chose Vehicle
-        cy.get(':nth-child(4) > .wrapper-add-vehicle-list-to > .g-col > .btn-primary-white').click()
+        cy.get(':nth-child(3) > .wrapper-add-vehicle-list-to > .g-col > .btn-primary-white').click()
         // Next
         cy.get('.wss-services > .accordian-step-button').click()
         cy.get('#ui-id-35 > .accordian-step-button').click()
