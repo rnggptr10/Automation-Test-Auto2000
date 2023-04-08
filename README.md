@@ -4,7 +4,12 @@ Link Spreedsheet Test-Case : https://docs.google.com/spreadsheets/d/1OLbRBdHC9_j
 
 FITUR-FITUR DIGIROOM AUTO2000 YANG HARUS DI TEST :
 
-1. MOBIL BARU (V)(FARELL)
+| Kolom 1          | Kolom 2          | Kolom 3          |
+| ---------------- | ---------------- | ---------------- |
+| Baris 1, Kolom 1 | Baris 1, Kolom 2 | Baris 1, Kolom 3 |
+| Baris 2, Kolom 1 | Baris 2, Kolom 2 | Baris 2, Kolom 3 |
+
+<!-- 1. MOBIL BARU (V)(FARELL)
 2. WORKSHOP SERVICE (ONPROGRESS)(RANGGA)
 3. KUPON SERVICE
 4. AKSESORIS (V)(FARELL)
@@ -14,11 +19,11 @@ FITUR-FITUR DIGIROOM AUTO2000 YANG HARUS DI TEST :
 8. TEST DRIVE (V)(FARELL)
 9. TRADE IN
 10. TRACKING ORDER
-11. BANDINGKAN MOBIL
+11. BANDINGKAN MOBIL (RANGGA)
 12. BODY PAINT (V)(RANGGA)
 13. ORDER SUKU CADANG (RANGGA)
 14. CUBAIN (V)(FARELL)
-15. PROFILE
+15. PROFILE (RANGGA)
 
 TAMBAHAN :
 
@@ -32,4 +37,4 @@ TAMBAHAN :
 8. SIMULASI CICILAN (V) FARELL
 9. SUBSCRIBE (V)(FARELL)
 10. HUBUNGI KAMI (FOOTER) (V)(FARELL)
-11. DEALER TOYOTA (FOOTER)
+11. DEALER TOYOTA (FOOTER) -->
