@@ -5,25 +5,25 @@ Link Spreedsheet Test-Case : https://docs.google.com/spreadsheets/d/1OLbRBdHC9_j
 FITUR-FITUR DIGIROOM AUTO2000 YANG HARUS DI TEST :
 
 - Fitur Utama
-  | Fitur | Penguji |
-  | ---------------- | ---------------- |
-  | Authentication : Login & Logout | Rangga |
-  | Authentication : Register | Rangga |
-  | Profile | Rangga |
-  | Paket Service | Rangga |
-  | Home Service | Rangga |
-  | Bandingkan Mobil | Rangga |
-  | Workshop Service | Rangga |
-  | Body Paint | Rangga |
-  | Order Suku Cabang | Rangga |
-  | Aksesoris | Farell |
-  | Used Car | Farell |
-  | Test Drive | Farell |
-  | Cubain | Farell |
-  | Trade In | Farell |
-  | Tracking Order | Farell |
-  | Kupon Service | Farell |
-  | Mobil Baru | Farell |
+  | Fitur | Penguji | Status |
+  | ---------------- | ---------------- | ---------------- |
+  | Authentication : Login & Logout | Rangga | |
+  | Authentication : Register | Rangga | |
+  | Profile | Rangga | |
+  | Paket Service | Rangga | |
+  | Home Service | Rangga | |
+  | Bandingkan Mobil | Rangga | |
+  | Workshop Service | Rangga | |
+  | Body Paint | Rangga | |
+  | Order Suku Cabang | Rangga | |
+  | Aksesoris | Farell | |
+  | Used Car | Farell | |
+  | Test Drive | Farell | |
+  | Cubain | Farell | |
+  | Trade In | Farell | |
+  | Tracking Order | Farell | |
+  | Kupon Service | Farell | |
+  | Mobil Baru | Farell | |
 
 - Fitur Tambahan :
 <!-- 1. LANDING PAGE (V)(FARELL)
