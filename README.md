@@ -4,33 +4,30 @@ Link Spreedsheet Test-Case : https://docs.google.com/spreadsheets/d/1OLbRBdHC9_j
 
 FITUR-FITUR DIGIROOM AUTO2000 YANG HARUS DI TEST :
 
-| Kolom 1          | Kolom 2          | Kolom 3          |
-| ---------------- | ---------------- | ---------------- |
-| Baris 1, Kolom 1 | Baris 1, Kolom 2 | Baris 1, Kolom 3 |
-| Baris 2, Kolom 1 | Baris 2, Kolom 2 | Baris 2, Kolom 3 |
+- Fitur Utama
+  | Fitur | Penguji |
+  | ---------------- | ---------------- |
+  | Authentication : Login & Logout | Rangga |
+  | Authentication : Register | Rangga |
+  | Profile | Rangga |
+  | Paket Service | Rangga |
+  | Home Service | Rangga |
+  | Bandingkan Mobil | Rangga |
+  | Workshop Service | Rangga |
+  | Body Paint | Rangga |
+  | Order Suku Cabang | Rangga |
+  | Aksesoris | Farell |
+  | Used Car | Farell |
+  | Test Drive | Farell |
+  | Cubain | Farell |
+  | Trade In | Farell |
+  | Tracking Order | Farell |
+  | Kupon Service | Farell |
+  | Mobil Baru | Farell |
 
-<!-- 1. MOBIL BARU (V)(FARELL)
-2. WORKSHOP SERVICE (ONPROGRESS)(RANGGA)
-3. KUPON SERVICE
-4. AKSESORIS (V)(FARELL)
-5. PAKET SERVIS (V)(RANGGA)
-6. USED CAR (V)(FARELL)
-7. HOME SERVICE (ONPROGRESS)(RANGGA)
-8. TEST DRIVE (V)(FARELL)
-9. TRADE IN
-10. TRACKING ORDER
-11. BANDINGKAN MOBIL (RANGGA)
-12. BODY PAINT (V)(RANGGA)
-13. ORDER SUKU CADANG (RANGGA)
-14. CUBAIN (V)(FARELL)
-15. PROFILE (RANGGA)
+- Fitur Tambahan :
+<!-- 1. LANDING PAGE (V)(FARELL)
 
-TAMBAHAN :
-
-1. LANDING PAGE (V)(FARELL)
-2. LOGIN (V)(RANGGA)
-3. REGISTER (V)(RANGGA)
-4. LOGOUT (V)(RANGGA)
 5. TENTANG AUTO2000
 6. PROMO
 7. TASIA
