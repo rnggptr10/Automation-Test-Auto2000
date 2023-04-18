@@ -10,14 +10,22 @@ context('Booking Vehicle', () => {
     // data case 1 (only service berkala)
     const case1 = {
         "kendaraan" : ".g-col > .btn-primary-white",
+        "jenis_service" : ".custom-group-checkbox > :nth-child(1) > .custom-checkbox > .checkmark", // service berkala
         "jarak_tempuh" : "Servis Berkala 1.000 KM",
         "lokasi_umum" : "Cimahi Utara, Cimahi City, West Java, Indonesia",
-        "lokasi_detail" : "Komplek Nusa Hijau Blok GV28"
+        "lokasi_detail" : "Komplek Nusa Hijau Blok GV28",
+        "jam_service" : "09:00"
     }
 
     // data case 2 (only perbaikan umum)
     const case2 = {
-
+        "kendaraan" : ".g-col > .btn-primary-white",
+        "jenis_service" : ":nth-child(2) > :nth-child(1) > .checkmark", // perbaikan umum
+        "pilihan_service" : ":nth-child(2) > .check-text-section > .custom-checkbox > .checkmark", // pilihan service (engine oil)
+        "jarak_tempuh" : "Servis Berkala 1.000 KM",
+        "lokasi_umum" : "Cimahi Utara, Cimahi City, West Java, Indonesia",
+        "lokasi_detail" : "Komplek Nusa Hijau Blok GV28",
+        "jam_service" : "09:30"
     }
 
     // data case 3 (based on waktu yg diinginkan)
@@ -50,7 +58,84 @@ context('Booking Vehicle', () => {
         cy.wait(4000)
     })
 
-    it('Do Booking Home Service Only with Service Berkala', () =>{
+    // it('Do Booking Home Service Only with Service Berkala & Based On Waktu yang diinginkan', () =>{
+    //     // To Page Home Service
+    //     cy.get(':nth-child(8) > .categoryContainer').click()
+    //     cy.wait(400)
+
+    //     /********************************
+    //     Personal Informasi & Detail Mobil
+    //     ********************************/
+    //     // Click Button 'Pilih Kendaraan' at Page Home Service
+    //     cy.get('.wrapper-button-add > .btn-primary-white').click()
+    //     cy.wait(400)
+
+    //     // Chose Car to Home Service
+    //     cy.get(case1.kendaraan).click()
+    //     cy.wait(400)
+
+    //     /********************************
+    //     *     Informasi Data Diri
+    //     ********************************/
+    //     // Click Button 'Berikutnya'
+    //     cy.get('#ui-id-4 > .ca-submit > .btn-primary-white').click()
+
+    //     /********************************
+    //     *     Pilih Layanan Servis
+    //     ********************************/
+    //     // Click Button 'Berikutnya'
+    //     cy.get('#ui-id-6 > .ca-submit > .btn-primary-white').click()
+    //     cy.get(case1.jenis_service).click()
+    //     cy.wait(400)
+
+    //     // Click Dropdown 'Jarak Tempuh Kendaraan'
+    //     cy.get('#selectedPeriodicService-button').click()
+    //     cy.get('#selectedPeriodicService-menu').contains(case1.jarak_tempuh).click()
+    //     cy.wait(400)
+
+    //     // Click Button 'Berikutnya'
+    //     cy.get('#ui-id-8 > .ca-submit > .btn-primary-white').click()
+    //     cy.wait(400)
+
+    //     /********************************
+    //     *     Lokasi Servis Anda
+    //     ********************************/
+    //     // Lokasi Umum
+    //     cy.get('#inputAddressAuto').type(case1.lokasi_umum)
+    //     // Lokasi Detail
+    //     cy.get('[style="width: 348px; position: absolute; left: 78px; top: 680px;"]').contains(case1.lokasi_umum).click()
+    //     cy.get('#serviceAddress1').type(case1.lokasi_detail)
+    //     cy.wait(400)    
+
+    //     // Click Button Berikutnya
+    //     cy.get('#toyota-home-location').click()
+    //     cy.wait(4000)
+        
+    //     /********************************
+    //     *   Pilih Waktu/Mekanik Anda
+    //     ********************************/
+    //     // Pilih waktu atau mekanik
+    //     cy.get('.preferred-time-section > :nth-child(1) > .g-col-12 > :nth-child(1) > label').click()
+
+    //     // Pilih Hari/Tanggal
+    //     cy.get('#Mon').click()
+
+    //     // Pilih Waktu
+    //     cy.get('#select-time-slot-button').click()
+    //     cy.get('#select-time-slot-menu').contains('09:00').click()
+    //     cy.wait(400)
+        
+    //     // Term & Condition
+    //     cy.get('.terms-container > .custom-checkbox > .checkmark').click()
+    //     cy.get('.modal-content > .terms-box-container > .terms-action-container > #tcclose').click()
+    //     cy.wait(400)
+
+    //     // Button Book Sekarang
+    //     cy.get('#timeschedule').click()
+    //     cy.wait(400)
+    // })
+
+    it('Do Booking Home Service Only with Perbaikan Umum & Based On Waktu yang diinginkan', () => {
         // To Page Home Service
         cy.get(':nth-child(8) > .categoryContainer').click()
         cy.wait(400)
@@ -77,12 +162,8 @@ context('Booking Vehicle', () => {
         ********************************/
         // Click Button 'Berikutnya'
         cy.get('#ui-id-6 > .ca-submit > .btn-primary-white').click()
-        cy.get('.custom-group-checkbox > :nth-child(1) > .custom-checkbox > .checkmark').click()
-        cy.wait(400)
-
-        // Click Dropdown 'Jarak Tempuh Kendaraan'
-        cy.get('#selectedPeriodicService-button').click()
-        cy.get('#selectedPeriodicService-menu').contains(case1.jarak_tempuh).click()
+        cy.get(case2.jenis_service).click()
+        cy.get(case2.pilihan_service).click()
         cy.wait(400)
 
         // Click Button 'Berikutnya'
@@ -93,10 +174,10 @@ context('Booking Vehicle', () => {
         *     Lokasi Servis Anda
         ********************************/
         // Lokasi Umum
-        cy.get('#inputAddressAuto').type(case1.lokasi_umum)
+        cy.get('#inputAddressAuto').type(case2.lokasi_umum)
         // Lokasi Detail
-        cy.get('[style="width: 348px; position: absolute; left: 78px; top: 680px;"]').contains(case1.lokasi_umum).click()
-        cy.get('#serviceAddress1').type(case1.lokasi_detail)
+        cy.get('[style="width: 348px; position: absolute; left: 78px; top: 680px;"]').contains(case2.lokasi_umum).click()
+        cy.get('#serviceAddress1').type(case2.lokasi_detail)
         cy.wait(400)    
 
         // Click Button Berikutnya
@@ -107,14 +188,14 @@ context('Booking Vehicle', () => {
         *   Pilih Waktu/Mekanik Anda
         ********************************/
         // Pilih waktu atau mekanik
-        //  ...
+        cy.get('.preferred-time-section > :nth-child(1) > .g-col-12 > :nth-child(1) > label').click()
 
         // Pilih Hari/Tanggal
-        cy.get('#Mon').click()
+        cy.get('#Wed').click()
 
         // Pilih Waktu
         cy.get('#select-time-slot-button').click()
-        cy.get('#select-time-slot-menu').contains('09:00').click()
+        cy.get('#select-time-slot-menu').contains(case2.jam_service).click()
         cy.wait(400)
         
         // Term & Condition
@@ -126,16 +207,4 @@ context('Booking Vehicle', () => {
         cy.get('#timeschedule').click()
         cy.wait(400)
     })
-
-    // it('Do Booking Home Service Only with Perbaikan Umum', () => {
-
-    // })
-
-    // it('Do Booking Home Service Based On Waktu yang diinginkan', () => {
-
-    // })
-
-    // it('Do Booking Home Service Based On Mekanik yang diinginkan', () => {
-
-    // })
 })
