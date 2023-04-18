@@ -1,98 +1,140 @@
 /// <reference types="cypress" />
 
 context('Testing Fitur Cubain Digiroom Auto2000', () => {
+    // data akun user
+    const userData = {
+        "email" : "ranggaputra103@gmail.com",
+        "password" : "sayangkamu8"
+    }
+
+    // Case Waktu Tidak Tersedia
+    const layananCubainData1 = {
+        "provinsi" : "DKI Jakarta",
+        "tanggal_awal" : ":nth-child(5) > :nth-child(6) > .ui-state-default",
+        "tanggal_akhir" : ".ui-datepicker-days-cell-over > .ui-state-default",
+    }
+
+    const layananCubainData2 = {
+        "provinsi" : "DKI Jakarta",
+        "tanggal_awal" : "#datepicker-cubain > .ui-datepicker-inline > .ui-datepicker-calendar > tbody > :nth-child(5) > :nth-child(3) > .ui-state-default",
+        "tanggal_akhir" : ".ui-datepicker-days-cell-over > .ui-state-default",
+    }
+
     beforeEach('',() => {
-        cy.viewport(1280,1080)
-        cy.visit('https://uat.auto2000.co.id/')
-        cy.wait(1000)
-        cy.get('.close > img').click({force:true})
+        // For Set Size Desktop
+        cy.viewport(1280,720)
+
+        // For Visit Web 
+        cy.visit('https://uat.auto2000.co.id/login')
+        
         Cypress.on('uncaught:exception', (err, runnable) => {
             // returning false here prevents Cypress from
             // failing the test
             return false
         })
+
+        // Login
+        cy.get('#login-email').type(userData.email)
+        cy.get('#login-password').type(userData.password)
+        cy.get('#btn-login').click()
+        cy.wait(4000)
     })
     
-    it('Testing Simulasi Cicilan Mobil Baru', () => {
+    it('Do Booking Cubain When Time is Not Ready', () => {
+        // To Page Cubain
+        cy.get('#menu-bar > ul.nav-list > :nth-child(4) > a').click()
 
-        //Geser Slider Menu 
-        cy.get('#category-range-slider').as('range').invoke('val', 125).trigger('change')
+        /******************************
+         *      Layanan Cubain
+         *****************************/
+        // Provinsi 
+        //  ...
 
-        //Klik Menu Cubain
-        cy.get(':nth-child(14) > .categoryContainer').click()
-        cy.wait(500)
+        // Pilih Tanggal Awal
+        cy.get('.div-startDate').click()
+        cy.get(layananCubainData1.tanggal_awal).click({force:true})
+        cy.wait(400)
 
-        //Ganti Provinsi (Memilih Jakarta Barat, DKI Jakarta)
-        cy.get('.g-col-lg-2 > .header-location').click({force:true})
-        cy.get('#ui-id-18-button').click({force:true})
-        cy.wait(200)
-        cy.get('#ui-id-18-menu').contains('Jakarta Barat').click({force:true})
-        cy.wait(200)
-        cy.get('#prev-page').click({force:true})
+        // Pilih Tanggal Akhir
+        cy.get('.div-endDate').click()
+        cy.get(layananCubainData1.tanggal_akhir).click({force:true})
+        cy.wait(400)
 
-        //Pilih Tanggal Awal
+        // Waktu Tidak Tersedia
+        cy.get('.notavailable').then(($notavailable) => {
+            if($notavailable.length > 0){
+                // jalankan kode disini jika elemen ditemukan
+                cy.get('.notavailable').contains("Mohon maaf, layanan cubain pada tanggal yang di pilih tidak tersedia.")
+            }else{
+
+            }
+        })
+    })
+
+    it('Do Booking Cubain When Time is Ready', () => {
+        // To Page Cubain
+        cy.get('#menu-bar > ul.nav-list > :nth-child(4) > a').click()
+
+        /******************************
+         *      Layanan Cubain
+         *****************************/
+        // Provinsi 
+        //  ...
+
+        // Pilih Tanggal Awal
         cy.get('.div-startDate').click()
         cy.get('.ui-datepicker-next').click()
-        cy.get(':nth-child(4) > :nth-child(5) > .ui-state-default').click({force:true})
-        cy.wait(200)
+        cy.get(layananCubainData2.tanggal_awal).click({force:true})
+        cy.wait(400)
 
-        //Pilih Tanggal Akhir
+        // Pilih Tanggal Akhir
         cy.get('.div-endDate').click()
-        cy.get('#datepicker-cubainEnd > .ui-datepicker-inline > .ui-datepicker-calendar > tbody > :nth-child(4) > :nth-child(7) > .ui-state-default').click()
-        cy.wait(200)
+        cy.get(layananCubainData2.tanggal_akhir).click({force:true})
+        cy.wait(400)
 
-        //Pilih Cabang
-        cy.get('[data-branchcode="T154"] > .add-car-carousel-item').click()
-        cy.wait(200)
+        // Pilih Cabang Terdekat
+        cy.get('[data-branchcode="T164"] > .add-car-carousel-item').click()
 
-        //Pilih Mobil
+        // Pilih Mobil
         cy.get('#ui-id-19-button').click({force:true})
         cy.get('#ui-id-19-menu').contains('TOYOTA ALL NEW AVANZA').click({force:true})
-        cy.wait(200)
+        cy.wait(400)
 
-        //Pilih Jam 
+        // Pilih Jam 
         cy.get('#timePickUp-button').click()
         cy.get('#timePickUp-menu').contains('09:00').click({force:true})
-        cy.wait(200)
+        cy.wait(400)
 
-        //Klik Lanjut
-        cy.get('.btn-cubain-now > .btn-secondary-white').click({force:true})
-        cy.wait(200)
+        // Button Cek Harga
+        cy.get('.btn-cubain-now > .btn-secondary-white').click()
+        cy.wait(400)
 
-        //Klik Selanjutnya
-        cy.get('.btn-cubain-next > .btn-primary-white').click({force:true})
-        cy.wait(200)
-
-        //Login
-        cy.get('#login-email').type('farellaldi29@gmail.com')
-        cy.get('#login-password').type('mrsilva123')
-        cy.get('#btn-login').click()
-        cy.wait(1000)
-
-        //Upload KTP
+        // Button Lanjut
+        cy.get('.btn-cubain-next > .btn-primary-white').click()
+        cy.wait(400)
+        
+        /******************************
+         *      Layanan Cubain
+         *****************************/
+        // Foto KTP
         cy.get('input[type=file][name=ktp]').attachFile('../fixtures/img/KTP_Farell.png')
         cy.wait(1000)
 
-        //Upload Selfie
+        // Swafoto dengan KTP
         cy.get('input[type=file][name=selfie]').attachFile('../fixtures/img/Selfie_Farell.jpeg')
         cy.wait(1000)
-
-        //Upload SIM
+        
+        // Foto SIM A
         cy.get('input[type=file][name=sim]').attachFile('../fixtures/img/SIM_Farell.jpeg')
         cy.wait(1000)
 
-        //Klik Checkmark
+        // Term & Condition
         cy.get('.checkmark').click()
-        cy.wait(200)
-
         cy.get('.modal-content > .terms-box-container > .terms-action-container > #tcclose').click()
-        cy.wait(200)
+        cy.wait(400)
 
-        //Klik Submit
+        // Click Button Submit
         cy.get('.btn-cubain-submit > .btn-primary-white').click()
-        cy.wait(200)
-
-
     })
 
 })
