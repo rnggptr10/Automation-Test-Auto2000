@@ -1,18 +1,7 @@
 /// <reference types="cypress" />
 
 context('Fitur Login', () => {
-    beforeEach('Open Web',() => {
-        // For Set Size Desktop
-        cy.viewport(1280,720)
-        // For Visit Web 
-        cy.visit('https://uat.auto2000.co.id/register')
-        Cypress.on('uncaught:exception', (err, runnable) => {
-            // returning false here prevents Cypress from
-            // failing the test
-            return false
-        })
-    })
-
+    // Data Testing berdasarkan testcase yang berada di spreedsheet
     const userData = [
         // Null Values
         {
@@ -32,6 +21,19 @@ context('Fitur Login', () => {
         },
         // Wrong Values
     ]
+    
+    beforeEach('Open Web',() => {
+        // For Set Size Desktop
+        cy.viewport(1280,720)
+        // For Visit Web 
+        cy.visit('https://uat.auto2000.co.id/register')
+        Cypress.on('uncaught:exception', (err, runnable) => {
+            // returning false here prevents Cypress from
+            // failing the test
+            return false
+        })
+    })
+
 
     it('Action Register With Null Value', () =>{
         cy.get('.ca-submit > .btn-primary-white').should('be.disabled')
