@@ -14,6 +14,7 @@ context('Testing Fitur Cubain Digiroom Auto2000', () => {
         "tanggal_akhir" : ".ui-datepicker-days-cell-over > .ui-state-default",
     }
 
+    // Case Waktu Tersedia
     const layananCubainData2 = {
         "provinsi" : "DKI Jakarta",
         "tanggal_awal" : "#datepicker-cubain > .ui-datepicker-inline > .ui-datepicker-calendar > tbody > :nth-child(5) > :nth-child(3) > .ui-state-default",
