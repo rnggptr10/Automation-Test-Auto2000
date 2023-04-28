@@ -162,9 +162,9 @@ context('Aksesoris', () => {
         cy.get('#information-contact').click()
 
         /*********************************
-         *     Kontak Informasi 
+         *     Ringkasan Pesanan
          ********************************/
-        // Ringkasan Pesanan
+        // Opsi Order
         cy.get('#orderPreference-button').click()
         cy.get('#orderPreference-menu').contains(ringkasanPesananData.order).click()
         
@@ -204,7 +204,6 @@ context('Aksesoris', () => {
         cy.get('.payment-confirm-pay').click()
 
         // Check If Form Submit Success
-        cy.get('QRIS Payment')
+        cy.contains('QRIS Payment')
     })  
-    
 })
