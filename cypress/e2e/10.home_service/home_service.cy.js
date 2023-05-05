@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-context('Booking Vehicle', () => {
+context('Home Service', () => {
     // data User
     const userData = {
         "email": "ranggaputra103@gmail.com",
@@ -58,82 +58,83 @@ context('Booking Vehicle', () => {
         cy.wait(4000)
     })
 
-    // it('Do Booking Home Service Only with Service Berkala & Based On Waktu yang diinginkan', () =>{
-    //     // To Page Home Service
-    //     cy.get(':nth-child(8) > .categoryContainer').click()
-    //     cy.wait(400)
+    it('Do Booking Home Service Only with Service Berkala & Based On Waktu yang diinginkan', () =>{
+        // To Page Home Service
+        cy.get(':nth-child(8) > .categoryContainer').click()
+        cy.wait(400)
 
-    //     /********************************
-    //     Personal Informasi & Detail Mobil
-    //     ********************************/
-    //     // Click Button 'Pilih Kendaraan' at Page Home Service
-    //     cy.get('.wrapper-button-add > .btn-primary-white').click()
-    //     cy.wait(400)
+        /********************************
+        Personal Informasi & Detail Mobil
+        ********************************/
+        // Click Button 'Pilih Kendaraan' at Page Home Service
+        cy.get('.wrapper-button-add > .btn-primary-white').click()
+        cy.wait(400)
 
-    //     // Chose Car to Home Service
-    //     cy.get(case1.kendaraan).click()
-    //     cy.wait(400)
+        // Chose Car to Home Service
+        cy.get(case1.kendaraan).click()
+        cy.wait(400)
 
-    //     /********************************
-    //     *     Informasi Data Diri
-    //     ********************************/
-    //     // Click Button 'Berikutnya'
-    //     cy.get('#ui-id-4 > .ca-submit > .btn-primary-white').click()
+        /********************************
+        *     Informasi Data Diri
+        ********************************/
+        // Click Button 'Berikutnya'
+        cy.get('#ui-id-4 > .ca-submit > .btn-primary-white').click()
 
-    //     /********************************
-    //     *     Pilih Layanan Servis
-    //     ********************************/
-    //     // Click Button 'Berikutnya'
-    //     cy.get('#ui-id-6 > .ca-submit > .btn-primary-white').click()
-    //     cy.get(case1.jenis_service).click()
-    //     cy.wait(400)
+        /********************************
+        *     Pilih Layanan Servis
+        ********************************/
+        // Click Button 'Berikutnya'
+        cy.get('#ui-id-6 > .ca-submit > .btn-primary-white').click()
+        cy.get(case1.jenis_service).click()
+        cy.wait(400)
 
-    //     // Click Dropdown 'Jarak Tempuh Kendaraan'
-    //     cy.get('#selectedPeriodicService-button').click()
-    //     cy.get('#selectedPeriodicService-menu').contains(case1.jarak_tempuh).click()
-    //     cy.wait(400)
+        // Click Dropdown 'Jarak Tempuh Kendaraan'
+        cy.get('#selectedPeriodicService-button').click()
+        cy.get('#selectedPeriodicService-menu').contains(case1.jarak_tempuh).click()
+        cy.wait(400)
 
-    //     // Click Button 'Berikutnya'
-    //     cy.get('#ui-id-8 > .ca-submit > .btn-primary-white').click()
-    //     cy.wait(400)
+        // Click Button 'Berikutnya'
+        cy.get('#ui-id-8 > .ca-submit > .btn-primary-white').click()
+        cy.wait(400)
 
-    //     /********************************
-    //     *     Lokasi Servis Anda
-    //     ********************************/
-    //     // Lokasi Umum
-    //     cy.get('#inputAddressAuto').type(case1.lokasi_umum)
-    //     // Lokasi Detail
-    //     cy.get('[style="width: 348px; position: absolute; left: 78px; top: 680px;"]').contains(case1.lokasi_umum).click()
-    //     cy.get('#serviceAddress1').type(case1.lokasi_detail)
-    //     cy.wait(400)    
+        /********************************
+        *     Lokasi Servis Anda
+        ********************************/
+        // Lokasi Umum
+        cy.get('#inputAddressAuto').type(case1.lokasi_umum)
+        // Lokasi Detail
+        cy.get('[style="width: 348px; position: absolute; left: 78px; top: 680px;"]').contains(case1.lokasi_umum).click()
+        cy.wait(1000)
+        cy.get('#serviceAddress1').type(case1.lokasi_detail)
+        cy.wait(1000)    
 
-    //     // Click Button Berikutnya
-    //     cy.get('#toyota-home-location').click()
-    //     cy.wait(4000)
+        // Click Button Berikutnya
+        cy.get('#toyota-home-location').click()
+        cy.wait(4000)
         
-    //     /********************************
-    //     *   Pilih Waktu/Mekanik Anda
-    //     ********************************/
-    //     // Pilih waktu atau mekanik
-    //     cy.get('.preferred-time-section > :nth-child(1) > .g-col-12 > :nth-child(1) > label').click()
+        /********************************
+        *   Pilih Waktu/Mekanik Anda
+        ********************************/
+        // Pilih waktu atau mekanik
+        cy.get('.preferred-time-section > :nth-child(1) > .g-col-12 > :nth-child(1) > label').click()
 
-    //     // Pilih Hari/Tanggal
-    //     cy.get('#Mon').click()
+        // Pilih Hari/Tanggal
+        cy.get('#Mon').click()
 
-    //     // Pilih Waktu
-    //     cy.get('#select-time-slot-button').click()
-    //     cy.get('#select-time-slot-menu').contains('09:00').click()
-    //     cy.wait(400)
+        // Pilih Waktu
+        cy.get('#select-time-slot-button').click()
+        cy.get('#select-time-slot-menu').contains('09:00').click()
+        cy.wait(400)
         
-    //     // Term & Condition
-    //     cy.get('.terms-container > .custom-checkbox > .checkmark').click()
-    //     cy.get('.modal-content > .terms-box-container > .terms-action-container > #tcclose').click()
-    //     cy.wait(400)
+        // Term & Condition
+        cy.get('.terms-container > .custom-checkbox > .checkmark').click()
+        cy.get('.modal-content > .terms-box-container > .terms-action-container > #tcclose').click()
+        cy.wait(400)
 
-    //     // Button Book Sekarang
-    //     cy.get('#timeschedule').click()
-    //     cy.wait(400)
-    // })
+        // Button Book Sekarang
+        cy.get('#timeschedule').click()
+        cy.wait(400)
+    })
 
     it('Do Booking Home Service Only with Perbaikan Umum & Based On Waktu yang diinginkan', () => {
         // To Page Home Service
