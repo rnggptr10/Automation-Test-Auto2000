@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-context('Booking Vehicle', () => {
+context('Body Paint', () => {
     // data akun user
     const userData = {
         "email" : "ranggaputra103@gmail.com",

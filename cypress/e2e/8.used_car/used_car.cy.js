@@ -6,8 +6,17 @@ context('Used Car', () => {
         "email" : "ranggaputra103@gmail.com",
         "password" : "sayangkamu8"
     } 
+
+    const informasiPelangganData = {
+        "alamat":"Apartemen Casablanca East Residences",
+        "alamat_detail":"CA-CD 17-01",
+        "kode_pos":"13440",
+        "npwp":"111111111111111"
+    }
+
+
     
-    beforeEach('',() => {
+    beforeEach('Open Web',() => {
         // For Set Size Desktop
         cy.viewport(1280,720)
 
@@ -27,29 +36,29 @@ context('Used Car', () => {
         cy.wait(4000)
     })
     
-    // it('Do Search', () =>{
-    //     // To Page Used Car
-    //     cy.get(':nth-child(6) > .categoryContainer').click()
+    it('Do Search', () =>{
+        // To Page Used Car
+        cy.get(':nth-child(6) > .categoryContainer').click()
 
-    //     // Search
-    //     cy.get('#js-site-search-input').type('TOYOTA FORTUNER 2.5 G AT' + '{enter}')
+        // Search
+        cy.get('#js-site-search-input').type('TOYOTA FORTUNER 2.5 G AT' + '{enter}')
 
-    //     // Check Result
-    //     cy.contains('TOYOTA FORTUNER 2.5 G AT')
-    // })
+        // Check Result
+        cy.contains('TOYOTA FORTUNER 2.5 G AT')
+    })
 
-    // it('Do Search By Filter', () =>{
-    //     // To Page Used Car
-    //     cy.get(':nth-child(6) > .categoryContainer').click()
+    it('Do Search By Filter', () =>{
+        // To Page Used Car
+        cy.get(':nth-child(6) > .categoryContainer').click()
     
-    //     // Model Kendaraan
-    //     cy.get(':nth-child(2) > .filter-head').click()
-    //     cy.get(':nth-child(2) > .facet__values > :nth-child(4) > .items-container > form > .custom-checkbox > .checkmark').click()
+        // Model Kendaraan
+        cy.get(':nth-child(2) > .filter-head').click()
+        cy.get(':nth-child(2) > .facet__values > :nth-child(4) > .items-container > form > .custom-checkbox > .checkmark').click()
 
-    //     // Tahun Produksi
-    //     cy.get(':nth-child(4) > .filter-head').click()
-    //     cy.get(':nth-child(4) > .facet__values > :nth-child(1) > .items-container > form > .custom-checkbox > .checkmark').click()
-    // })
+        // Tahun Produksi
+        cy.get(':nth-child(4) > .filter-head').click()
+        cy.get(':nth-child(4) > .facet__values > :nth-child(1) > .items-container > form > .custom-checkbox > .checkmark').click()
+    })
 
     it('Do Buy Used Car', ()=>{
         // To Page Used Car
@@ -100,16 +109,16 @@ context('Used Car', () => {
         cy.get('input[type=file]').attachFile('../fixtures/img/contoh_KTP.jpg')
         cy.wait(1000)
         //Isi Alamat
-        cy.get('#used-car-address').type('Apartemen Casablanca East Residences').type('{enter}')
+        cy.get('#used-car-address').type(informasiPelangganData.alamat).type('{enter}')
         cy.wait(200)
         // Alamat Detail
-        cy.get('#used-car-flat').type('CA-CD 17-01')
+        cy.get('#used-car-flat').type(informasiPelangganData.alamat_detail)
         cy.wait(200)
         //Isi Kode Pos
-        cy.get('#used-car-postal').type('13440').type('{enter}')
+        cy.get('#used-car-postal').type(informasiPelangganData.kode_pos).type('{enter}')
         cy.wait(200)
         //Input NPWP
-        cy.get('#used-car-npwp').type('111111111111111').type('{enter}')
+        cy.get('#used-car-npwp').type(informasiPelangganData.npwp).type('{enter}')
         cy.wait(200)
         
         // Checkbox Term & Condition

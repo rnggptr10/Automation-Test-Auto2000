@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-context('Booking Vehicle', () => {
+context('Profile Saya', () => {
     // data testing user
     const userData = {
         "email" : "ranggaputra103@gmail.com",
@@ -8,9 +8,9 @@ context('Booking Vehicle', () => {
     }
     const personalInformationData = {
         "name_case" : "Do Edit Personal Information",
-        "nama_lengkap" : "Fasya Nurina",
-        "nama_panggilan" : "Sya",
-        "jenis_kelamin" : "Perempuan",
+        "nama_lengkap" : "Rangga Putra Sadikin",
+        "nama_panggilan" : "Rangput",
+        "jenis_kelamin" : "Laki-Laki",
         "tanggal_lahir" : "10/03/2002",
         
         // Alamat Tempat Tinggal
@@ -19,11 +19,17 @@ context('Booking Vehicle', () => {
         "alamat_lengkap" : "Komplek Nusa Hijau Blok GV.28"            
     }
     
-    // detailAccountData masih bisa dikerucutin lagi
-    const detailAccountData = {
-        "name_case" : "Do Edit Detail Account",
+    const detailAccountData1 = {
+        "name_case" : "Do Edit Detail Account 1",
         "new_password" : "akukamu12345",
         "confirm_new_password" : "akukamu12345",
+        "no_hp" : "81120490872",
+    }
+
+    const detailAccountData2 = {
+        "name_case" : "Do Edit Detail Account 2",
+        "new_password" : "sayangkamu8",
+        "confirm_new_password" : "sayangkamu8",
         "no_hp" : "81120490872",
     }
     
@@ -59,11 +65,12 @@ context('Booking Vehicle', () => {
         // To Page Profile
         cy.get('.header-nav-container > :nth-child(2) > :nth-child(2)').click()
 
-
         // Situation for Pop Up
-        cy.get('.modal-content').then(($element) =>{
-            if($element){
+        cy.get('body').then(($element) =>{
+            if($element.hasClass('modal-content')){
                 cy.get('.modal-close').click()
+            }else{
+                cy.log('pop up tidak muncul')
             }
         })
         cy.wait(4000)
@@ -106,44 +113,125 @@ context('Booking Vehicle', () => {
         cy.get('.submit-my-profile-form').click()
     })
 
-    // it(detailAccountData.name_case, ()=>{
-        // // To Page Profile
-        // cy.get('.header-nav-container > :nth-child(2) > :nth-child(2)').click()
+    it(detailAccountData1.name_case, ()=>{
+        // ========================> 1
+        // To Page Profile
+        cy.get('.header-nav-container > :nth-child(2) > :nth-child(2)').click()
 
-        // if(cy.get('.modal-close') != null){
-        //     // Click Button 'Close' to close windows alert
-        //     cy.get('.modal-close').click()
-        //     // To Section 'Profile Saya' at Profile Page
-        //     cy.get(':nth-child(2) > div.my-account-menu-name > .my-account-menu-name').click()
-        // }
+        // Situation for Pop Up
+        cy.get('body').then(($element) =>{
+            if($element.hasClass('modal-content')){
+                cy.get('.modal-close').click()
+            }else{
+                cy.log('pop up tidak muncul')
+            }
+        })
+        cy.wait(1000)
 
-        // // Click Edit Informasi Personal
-        // cy.get(':nth-child(7) > .my-profile-block-inner > .my-profile-form-title > .my-profile-edit-link').click()
+        // To Section 'Profile Saya' at Profile Page
+        cy.get(':nth-child(2) > div.my-account-menu-name > .my-account-menu-name').click()
+        cy.wait(1000)
 
-        // // Edit Detail Akun
-        // // New Password
-        // cy.get('#cr-password').type(detailAccountData.new_password)
-        // // New Confirm Password 
-        // cy.get('#cr-confirm-password').type(detailAccountData.confirm_new_password)
-        // // No HP
-        // cy.get('.phone-number').clear()
-        // cy.get('.phone-number').type(detailAccountData.no_hp)
+        // Click Edit Informasi Personal
+        cy.get(':nth-child(7) > .my-profile-block-inner > .my-profile-form-title > .my-profile-edit-link').click()
 
-        // // Click Button 'Simpan'
-        // cy.get('.submit-my-profile-form').click()
+        // Edit Detail Akun
+        // New Password
+        cy.get('#cr-password').type(detailAccountData1.new_password)
+        // New Confirm Password 
+        cy.get('#cr-confirm-password').type(detailAccountData1.confirm_new_password)
+        // No HP
+        cy.get('.phone-number').clear()
+        cy.get('.phone-number').type(detailAccountData1.no_hp)
+
+        // Click Button 'Simpan'
+        cy.get('.submit-my-profile-form').click()
+
+        // ========================> 2
+        // To Page Profile
+        cy.get('.header-nav-container > :nth-child(2) > :nth-child(2)').click()
+
+        // Situation for Pop Up
+        cy.get('body').then(($element) =>{
+            if($element.hasClass('modal-content')){
+                cy.get('.modal-close').click()
+            }else{
+                cy.log('pop up tidak muncul')
+            }
+        })
+        cy.wait(1000)
+
+        // To Section 'Profile Saya' at Profile Page
+        cy.get(':nth-child(2) > div.my-account-menu-name > .my-account-menu-name').click()
+        cy.wait(1000)
+
+        // Click Edit Informasi Personal
+        cy.get(':nth-child(7) > .my-profile-block-inner > .my-profile-form-title > .my-profile-edit-link').click()
+
+        // Edit Detail Akun
+        // New Password
+        cy.get('#cr-password').type(detailAccountData2.new_password)
+        // New Confirm Password 
+        cy.get('#cr-confirm-password').type(detailAccountData2.confirm_new_password)
+        // No HP
+        cy.get('.phone-number').clear()
+        cy.get('.phone-number').type(detailAccountData2.no_hp)
+
+        // Click Button 'Simpan'
+        cy.get('.submit-my-profile-form').click()
+    })
+
+    // it(detailAccountData2.name_case, ()=>{
+    //     // To Page Profile
+    //     cy.get('.header-nav-container > :nth-child(2) > :nth-child(2)').click()
+
+    //     // Situation for Pop Up
+    //     cy.get('body').then(($element) =>{
+    //         if($element.hasClass('modal-content')){
+    //             cy.get('.modal-close').click()
+    //         }else{
+    //             cy.log('pop up tidak muncul')
+    //         }
+    //     })
+    //     cy.wait(1000)
+
+    //     // To Section 'Profile Saya' at Profile Page
+    //     cy.get(':nth-child(2) > div.my-account-menu-name > .my-account-menu-name').click()
+    //     cy.wait(1000)
+
+    //     // Click Edit Informasi Personal
+    //     cy.get(':nth-child(7) > .my-profile-block-inner > .my-profile-form-title > .my-profile-edit-link').click()
+
+    //     // Edit Detail Akun
+    //     // New Password
+    //     cy.get('#cr-password').type(detailAccountData2.new_password)
+    //     // New Confirm Password 
+    //     cy.get('#cr-confirm-password').type(detailAccountData2.confirm_new_password)
+    //     // No HP
+    //     cy.get('.phone-number').clear()
+    //     cy.get('.phone-number').type(detailAccountData2.no_hp)
+
+    //     // Click Button 'Simpan'
+    //     cy.get('.submit-my-profile-form').click()
     // })
 
     it(OtherInformationData.name_case, ()=>{
         // To Page Profile
         cy.get('.header-nav-container > :nth-child(2) > :nth-child(2)').click()
 
-        // if(cy.get('.modal-close') != null){
-        //     // Click Button 'Close' to close windows alert
-        //     cy.get('.modal-close').click()
-        // }
+        // Situation for Pop Up
+        cy.get('body').then(($element) =>{
+            if($element.hasClass('modal-content')){
+                cy.get('.modal-close').click()
+            }else{
+                cy.log('pop up tidak muncul')
+            }
+        })
+        cy.wait(1000)
 
         // To Section 'Profile Saya' at Profile Page
         cy.get(':nth-child(2) > div.my-account-menu-name > .my-account-menu-name').click()
+        cy.wait(1000)
 
         // Click Edit Informasi Lainnya
         cy.get(':nth-child(8) > .my-profile-block-inner > .my-profile-form-title > .my-profile-edit-link').click()

@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-context('Booking Vehicle', () => {
+context('Paket Service', () => {
     // data testing user Data
     const userData = {
         "email":"ranggaputra103@gmail.com",
@@ -30,8 +30,8 @@ context('Booking Vehicle', () => {
         "provinsi" : "DKI Jakarta",
         "kota" : "Jakarta Barat",
         "cabang" : "Auto2000 Daan Mogot",
-        "tanggal_service" : ":nth-child(4) > :nth-child(6) > .ui-state-default", 
-        "jam_service" : "08:00"
+        "tanggal_service" : ":nth-child(5) > :nth-child(4) > .ui-state-default", 
+        "jam_service" : "8:00"
     }
     
     beforeEach('Open Web',() => {
@@ -54,53 +54,53 @@ context('Booking Vehicle', () => {
         cy.wait(4000)
     })
 
-    // it('Do Search Paket Service', () =>{ 
-    //     // To Page Paket Service
-    //     cy.get(':nth-child(5) > .categoryContainer').click()
-    //     cy.wait(4000)
+    it('Do Search Paket Service', () =>{ 
+        // To Page Paket Service
+        cy.get(':nth-child(5) > .categoryContainer').click()
+        cy.wait(4000)
 
-    //     // Search
-    //     cy.get('#js-site-search-input').type(searchPaketService.key + '{enter}')
+        // Search
+        cy.get('#js-site-search-input').type(searchPaketService.key + '{enter}')
 
-    //     // Check Result 
-    //     cy.get(':nth-child(1) > .servicePackage-tile > .servPackage-name').contains(searchPaketService.key)
-    //     cy.wait(4000)
-    // })
+        // Check Result 
+        cy.get(':nth-child(1) > .servicePackage-tile > .servPackage-name').contains(searchPaketService.key)
+        cy.wait(4000)
+    })
 
-    // it('Do Search With Filter on Paket Service', () =>{ 
-    //     // To Page Paket Service
-    //     cy.get(':nth-child(5) > .categoryContainer').click()
-    //     cy.wait(4000)
+    it('Do Search With Filter on Paket Service', () =>{ 
+        // To Page Paket Service
+        cy.get(':nth-child(5) > .categoryContainer').click()
+        cy.wait(4000)
 
-    //     // Model Mobil
-    //     cy.get('#ui-id-1-button').click()
-    //     cy.get('#ui-id-1-menu').contains(searchFilterPaketService.car_model).click()
+        // Model Mobil
+        cy.get('#ui-id-1-button').click()
+        cy.get('#ui-id-1-menu').contains(searchFilterPaketService.car_model).click()
 
-    //     // Tipe Mobil
-    //     cy.get('#ui-id-2-button').click()
-    //     cy.get('#ui-id-2-menu').contains(searchFilterPaketService.car_type).click() 
+        // Tipe Mobil
+        cy.get('#ui-id-2-button').click()
+        cy.get('#ui-id-2-menu').contains(searchFilterPaketService.car_type).click() 
 
-    //     // Click
-    //     cy.get('.button-find-sp > .btn-primary-white').click()
+        // Click
+        cy.get('.button-find-sp > .btn-primary-white').click()
 
-    //     // Check Result
-    //     cy.get(':nth-child(2) > .servicePackage-tile > .servPackage-name').contains(searchFilterPaketService.car_model)
-    //     cy.wait(4000)
-    // })
+        // Check Result
+        cy.get(':nth-child(2) > .servicePackage-tile > .servPackage-name').contains(searchFilterPaketService.car_model)
+        cy.wait(4000)
+    })
 
-    // it('Do See Detail Product Paket Service', () =>{ 
-    //     // To Page Paket Service
-    //     cy.get(':nth-child(5) > .categoryContainer').click()
-    //     cy.wait(4000)
+    it('Do See Detail Product Paket Service', () =>{ 
+        // To Page Paket Service
+        cy.get(':nth-child(5) > .categoryContainer').click()
+        cy.wait(4000)
 
-    //     // Button Lihat Detail
-    //     const text = cy.get(':nth-child(2) > .servicePackage-tile > .servPackage-name').invoke('text')
-    //     cy.log(text)
-    //     cy.get(':nth-child(2) > .servicePackage-tile > .button-hover-plp > .view-Detail').click()
+        // Button Lihat Detail
+        const text = cy.get(':nth-child(2) > .servicePackage-tile > .servPackage-name').invoke('text')
+        cy.log(text)
+        cy.get(':nth-child(2) > .servicePackage-tile > .button-hover-plp > .view-Detail').click()
 
-    //     // Check Title Detail
-    //     // cy.get('.servicePackage-title').contains(text)
-    // }) 
+        // Check Title Detail
+        // cy.get('.servicePackage-title').contains(text)
+    }) 
 
     
     it('Do Buy Product Paket Service', () =>{ 
@@ -181,10 +181,13 @@ context('Booking Vehicle', () => {
          *       Konfirmasi Detail
          * ****************************/
         // Metode Pembayaran
-        cy.get(':nth-child(3) > label').click()
-        cy.wait(4000)
+        cy.get('[for="rbQRIS"]').click()
+        cy.wait(400)
         // Button  Konfirmasi & Bayar
         cy.get('.payment-confirm-pay').click()
-        cy.wait(4000)
+        cy.wait(400)
+
+        // Jika Sukses
+        cy.url().should('not.eq','https://uat.auto2000.co.id/paketservistoyota/checkout/fullpayment')
     })
 })

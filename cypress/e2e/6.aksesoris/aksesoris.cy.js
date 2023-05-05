@@ -59,42 +59,42 @@ context('Aksesoris', () => {
         cy.wait(4000)
     })
     
-    // it('Do Search Aksesoris', () => {
-    //     // To Page Aksesoris
-    //     cy.get(':nth-child(4) > .categoryContainer').click()
+    it('Do Search Aksesoris', () => {
+        // To Page Aksesoris
+        cy.get(':nth-child(4) > .categoryContainer').click()
 
-    //     // Search 
-    //     cy.get('.product-list-search-bar > .search-form > #js-site-search-input').type(searchAksesoris.key + '{enter}')
+        // Search 
+        cy.get('.product-list-search-bar > .search-form > #js-site-search-input').type(searchAksesoris.key + '{enter}')
 
-    //     // Check Result
-    //     cy.get(':nth-child(3) > .accessories-tile').contains(searchAksesoris.key)
-    //     cy.wait(400)
-    // })
+        // Check Result
+        cy.get(':nth-child(3) > .accessories-tile').contains(searchAksesoris.key)
+        cy.wait(400)
+    })
 
-    // it('Do Search With Filter on Aksesoris', () =>{
-    //     // To Page Aksesoris
-    //     cy.get(':nth-child(4) > .categoryContainer').click()
+    it('Do Search With Filter on Aksesoris', () =>{
+        // To Page Aksesoris
+        cy.get(':nth-child(4) > .categoryContainer').click()
 
-    //     // Model Kendaraan
-    //     cy.get(':nth-child(2) > .filter-head').click()
-    //     cy.get(':nth-child(2) > .facet__values > :nth-child(1) > .items-container > .g-row > .custom-checkbox > .checkmark').click()
+        // Model Kendaraan
+        cy.get(':nth-child(2) > .filter-head').click()
+        cy.get(':nth-child(2) > .facet__values > :nth-child(1) > .items-container > .g-row > .custom-checkbox > .checkmark').click()
 
-    //     // Tipe Aksesoris
-    //     cy.get(':nth-child(7) > .filter-head').click()
-    //     cy.get(':nth-child(7) > .facet__values > :nth-child(2) > .items-container > .g-row > .custom-checkbox > .checkmark').click()
-    // })
+        // Tipe Aksesoris
+        cy.get(':nth-child(7) > .filter-head').click()
+        cy.get(':nth-child(7) > .facet__values > :nth-child(2) > .items-container > .g-row > .custom-checkbox > .checkmark').click()
+    })
 
-    // it('Do See Detail Aksesoris & Back To Landing Page Aksesoris', () =>{
-    //     // To Page Aksesoris
-    //     cy.get(':nth-child(4) > .categoryContainer').click()
+    it('Do See Detail Aksesoris & Back To Landing Page Aksesoris', () =>{
+        // To Page Aksesoris
+        cy.get(':nth-child(4) > .categoryContainer').click()
 
-    //     // See Detail Aksesoris
-    //     cy.get(':nth-child(3) > .accessories-tile > .accs-tile-hover > .accessories-details').click()
-    //     cy.get('.arrow-back > a > span').click()
+        // See Detail Aksesoris
+        cy.get(':nth-child(3) > .accessories-tile > .accs-tile-hover > .accessories-details').click()
+        cy.get('.arrow-back > a > span').click()
         
-    //     // Banyak List Aksesoris
-    //     cy.get('.product-list-result-count').contains('30 hasil')
-    // })
+        // Banyak List Aksesoris
+        cy.get('.product-list-result-count').contains('30 hasil')
+    })
 
 
     it('Do Add Aksesoris & Checkout', () =>{

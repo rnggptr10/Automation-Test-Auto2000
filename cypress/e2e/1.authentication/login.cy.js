@@ -3,21 +3,35 @@
 context('Fitur Login', () => {
     // data testing berdasarkan testcase yang berada di spreedsheet
     const userData = [
+        // Null Values
         {
+            "name_case":"Do Login With Null Values",
             "email" : "",
             "password" : ""
         },
+        // Wrong Values (Email)
         {
-            "email": "nurinafasya@gmail.com",
-            "password":"hahahaha"
+            "name_case":"Do Login With Wrong Values (Email)",
+            "email": "ranggaputra1103@gmail.com",
+            "password":"sayangkamu8"
         },
+        // Wrong Values (Password)
         {
-            "email": "nurinafasya111@gmail.com",
+            "name_case":"Do Login With Wrong Values (Password)",
+            "email": "ranggaputra103@gmail.com",
             "password":"hahahihi123"
         },
+        // Wrong Values (Email & Password)
         {
-            "email":"nurinafasya@gmail.com",
+            "name_case":"Do Login With Wrong Values (Email & Password)",
+            "email":"ran3ggaputra103@gmail.com",
             "password":"hahahihi123"
+        },
+        // Correct Values
+        {
+            "name_case":"Do Login With Correct Values",
+            "email":"ranggaputra103@gmail.com",
+            "password":"sayangkamu8"
         }
     ]
 
@@ -34,7 +48,7 @@ context('Fitur Login', () => {
     })
     
     userData.forEach((data) =>{
-        it('Action Login', () =>{
+        it(data.name_case, () =>{
             if(data.email != "" && data.password != ""){
                 cy.get('#login-email').type(data.email)
                 cy.wait(400)
@@ -47,5 +61,4 @@ context('Fitur Login', () => {
             }
         })
     })
-
 })   

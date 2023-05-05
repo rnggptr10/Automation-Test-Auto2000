@@ -7,7 +7,7 @@ context('Trade In', () => {
         "password" : "sayangkamu8"
     } 
 
-    const userCarData = {
+    const userCarTradeInData = {
         "merek":"HONDA",
         "model":"BRIO",
         "silinder":"1.2",
@@ -22,7 +22,25 @@ context('Trade In', () => {
          * pilihan menu
          ****************/
         // Tukar Tambah
-        // "pilihan_menu":":nth-child(1) > label"
+        "pilihan_menu":":nth-child(1) > label"
+        // Jual Mobil Saya
+        // "pilihan_menu":".g-col-12 > :nth-child(2) > label"
+    }
+
+    const userCarSellData = {
+        "merek":"HONDA",
+        "model":"BRIO",
+        "silinder":"1.2",
+        "tipe":"E",
+        "transmisi":"AT",
+        "tahun_pembuatan":"2016",
+        "bahan_bakar":"BENSIN",
+        "penggerak":"4x2",
+        "provinsi":"JAKARTA",
+
+        /*****************
+         * pilihan menu
+         ****************/
         // Jual Mobil Saya
         "pilihan_menu":".g-col-12 > :nth-child(2) > label"
     }
@@ -39,11 +57,11 @@ context('Trade In', () => {
         "kota" : "Jakarta Pusat",
         "alamat": "Jalan Raya Slipi",
         "alamat_detail" : "Blok Gv.28",
-        "tanggal" : ":nth-child(5) > :nth-child(7) > .ui-state-default",
+        "tanggal" : ":nth-child(1) > :nth-child(6) > .ui-state-default",
         "jam" : "08:30"
     }
 
-    beforeEach('',() => {
+    beforeEach('open Web',() => {
         // For Set Size Desktop
         cy.viewport(1280,720)
 
@@ -73,36 +91,37 @@ context('Trade In', () => {
          *****************************/
         // Merek
         cy.get('#brand-button').click()
-        cy.get('#brand-menu').contains(userCarData.merek).click()
+        cy.get('#brand-menu').contains(userCarTradeInData.merek).click()
         // Model Mobil
         cy.get('#carmodel-button').click()
-        cy.get('#carmodel-menu').contains(userCarData.model).click()
+        cy.get('#carmodel-menu').contains(userCarTradeInData.model).click()
         // Silinder
         cy.get('#cylinder-button').click()
-        cy.get('#cylinder-menu').contains(userCarData.silinder).click()
+        cy.get('#cylinder-menu').contains(userCarTradeInData.silinder).click()
         // Tipe
         cy.get('#cartype-button').click()
-        cy.get('#cartype-menu').contains(userCarData.tipe).click()
+        cy.get('#cartype-menu').contains(userCarTradeInData.tipe).click()
         // Transmisi
         cy.get('#transmission-button').click()
-        cy.get('#transmission-menu').contains(userCarData.transmisi).click()
+        cy.get('#transmission-menu').contains(userCarTradeInData.transmisi).click()
         // Tahun Pembuatan
         cy.get('#Productionyear-button').click()
-        cy.get('#Productionyear-menu').contains(userCarData.tahun_pembuatan).click()
+        cy.get('#Productionyear-menu').contains(userCarTradeInData.tahun_pembuatan).click()
         // Bahan Bakar
         cy.get('#fuel-button').click()
-        cy.get('#fuel-menu').contains(userCarData.bahan_bakar).click()
+        cy.get('#fuel-menu').contains(userCarTradeInData.bahan_bakar).click()
         // Penggerak
         cy.get('#drive-button').click()
-        cy.get('#drive-menu').contains(userCarData.penggerak).click()
+        cy.get('#drive-menu').contains(userCarTradeInData.penggerak).click()
         // Provinsi Cek Harga
         cy.get('#province-button').click()
-        cy.get('#province-menu').contains(userCarData.provinsi).click()
+        cy.get('#province-menu').contains(userCarTradeInData.provinsi).click()
 
 
         // Button Lanjut
-        cy.get(userCarData.pilihan_menu).click()
+        cy.get(userCarTradeInData.pilihan_menu).click()
         cy.get('.step1-next-button').click()
+        cy.wait(1000)
 
         /******************************
          *  Mobil Baru Pilihan Anda
@@ -146,35 +165,35 @@ context('Trade In', () => {
          *****************************/
         // Merek
         cy.get('#brand-button').click()
-        cy.get('#brand-menu').contains(userCarData.merek).click()
+        cy.get('#brand-menu').contains(userCarSellData.merek).click()
         // Model Mobil
         cy.get('#carmodel-button').click()
-        cy.get('#carmodel-menu').contains(userCarData.model).click()
+        cy.get('#carmodel-menu').contains(userCarSellData.model).click()
         // Silinder
         cy.get('#cylinder-button').click()
-        cy.get('#cylinder-menu').contains(userCarData.silinder).click()
+        cy.get('#cylinder-menu').contains(userCarSellData.silinder).click()
         // Tipe
         cy.get('#cartype-button').click()
-        cy.get('#cartype-menu').contains(userCarData.tipe).click()
+        cy.get('#cartype-menu').contains(userCarSellData.tipe).click()
         // Transmisi
         cy.get('#transmission-button').click()
-        cy.get('#transmission-menu').contains(userCarData.transmisi).click()
+        cy.get('#transmission-menu').contains(userCarSellData.transmisi).click()
         // Tahun Pembuatan
         cy.get('#Productionyear-button').click()
-        cy.get('#Productionyear-menu').contains(userCarData.tahun_pembuatan).click()
+        cy.get('#Productionyear-menu').contains(userCarSellData.tahun_pembuatan).click()
         // Bahan Bakar
         cy.get('#fuel-button').click()
-        cy.get('#fuel-menu').contains(userCarData.bahan_bakar).click()
+        cy.get('#fuel-menu').contains(userCarSellData.bahan_bakar).click()
         // Penggerak
         cy.get('#drive-button').click()
-        cy.get('#drive-menu').contains(userCarData.penggerak).click()
+        cy.get('#drive-menu').contains(userCarSellData.penggerak).click()
         // Provinsi Cek Harga
         cy.get('#province-button').click()
-        cy.get('#province-menu').contains(userCarData.provinsi).click()
+        cy.get('#province-menu').contains(userCarSellData.provinsi).click()
 
 
         // Button Pilihan Menu
-        cy.get(userCarData.pilihan_menu).click()
+        cy.get(userCarSellData.pilihan_menu).click()
         // Button Lanjut
         cy.get('.step1-next-button').click()
 

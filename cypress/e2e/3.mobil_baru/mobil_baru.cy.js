@@ -5,8 +5,27 @@ context('Mobil Baru', () => {
         "email" : "ranggaputra103@gmail.com",
         "password" : "sayangkamu8"
     }
+
+    const dataPemesanan = {
+        "kode_pos" : "13440",
+        "npwp" : "12345678901234",
+        "stnk" : "KTP STNK"
+    }
+
+    const cabangAndMetodePengirimanData = {
+        "provinsi":"DKI Jakarta",
+        "kota":"Jakarta Timur",
+        "cabang":"Auto2000 Kalimalang",
+        "opsi_pengiriman":"Antar ke rumah",
+        "alamat":"Apartemen Casablanca East Residences",
+        "alamat_detail":"CA-CD 17-01"
+    }
+
+    const opsiPembayaranData = {
+        "opsi":"QRIS"
+    }
     
-    beforeEach('',() => {
+    beforeEach('Open Web',() => {
          // For Set Size Desktop
          cy.viewport(1280,720)
 
@@ -52,7 +71,6 @@ context('Mobil Baru', () => {
 
     })
 
-    
     it('Do Buy New Car', () => {
         // To Page Mobil Baru
         cy.get(':nth-child(1) > .categoryContainer').click()
@@ -74,11 +92,11 @@ context('Mobil Baru', () => {
         cy.wait(1000)
 
         //Input Kode Pos
-        cy.get('#car-buyer-postal').type('13440')
+        cy.get('#car-buyer-postal').type(dataPemesanan.kode_pos)
         cy.wait(200)
 
         //Input NPWP
-        cy.get('#car-buyer-npwp').type('12345678901234')
+        cy.get('#car-buyer-npwp').type(dataPemesanan.npwp)
         cy.wait(200)
 
         cy.get('#car-buyer-validation > .upload-section').click()
@@ -86,7 +104,7 @@ context('Mobil Baru', () => {
 
         //Pertanyaan STNK
         cy.get('#select-stnk-value-button').click()
-        cy.get('#select-stnk-value-menu').contains('KTP STNK').click({force:true})
+        cy.get('#select-stnk-value-menu').contains(dataPemesanan.stnk).click({force:true})
         cy.wait(200)
 
 
@@ -95,23 +113,23 @@ context('Mobil Baru', () => {
          ************************************/
         // Pilih Provinsi
         cy.get('#provinceCode-button').click()
-        cy.get('#provinceCode-menu').contains('DKI Jakarta').click()
+        cy.get('#provinceCode-menu').contains(cabangAndMetodePengirimanData.provinsi).click()
         // Pilih Kota
         cy.get('#cityCode-button').click()
-        cy.get('#cityCode-menu').contains('Jakarta Timur').click({force:true})
+        cy.get('#cityCode-menu').contains(cabangAndMetodePengirimanData.kota).click({force:true})
         cy.wait(200)
         // Pilih Cabang
         cy.get('#branchCode-button').click()
-        cy.get('#branchCode-menu').contains('Auto2000 Kalimalang').click({force:true})
+        cy.get('#branchCode-menu').contains(cabangAndMetodePengirimanData.cabang).click({force:true})
         cy.wait(200)
         // Pilih Opsi Pengiriman (Antar Ke Rumah)
         cy.get('#delivery-options-button').click()
-        cy.get('#delivery-options-menu').contains('Antar ke rumah').click({force:true})
+        cy.get('#delivery-options-menu').contains(cabangAndMetodePengirimanData.opsi_pengiriman).click({force:true})
         cy.wait(200)
         // Alamat
-        cy.get('#branch-address').type('Apartemen Casablanca East Residences').type('{enter}')
+        cy.get('#branch-address').type(cabangAndMetodePengirimanData.alamat).type('{enter}')
         // Alamat Detail
-        cy.get('#address2').type('CA-CD 17-01')
+        cy.get('#address2').type(cabangAndMetodePengirimanData.alamat_detail)
 
         //Lanjutkan
         cy.get('.ktp-buttons > .btn-secondary-white').click()
@@ -127,7 +145,7 @@ context('Mobil Baru', () => {
          ************************************/
         // Opsi Pembayaran
         cy.get('#select-payment-method-reserve-button').click()
-        cy.get('#select-payment-method-reserve-menu').contains('QRIS').click()
+        cy.get('#select-payment-method-reserve-menu').contains(opsiPembayaranData.opsi).click()
 
 
         // Button Beli

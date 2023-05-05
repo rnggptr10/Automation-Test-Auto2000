@@ -1,10 +1,15 @@
 /// <reference types="cypress" />
 
-context('Booking Vehicle', () => {
+context('Tracking Order', () => {
     // data akun user
     const userData = {
         "email" : "ranggaputra103@gmail.com",
         "password" : "sayangkamu8"
+    }
+
+    // Nomor Booking
+    const idOrderData = {
+        "id":"T257SFG23000003",
     }
    
     beforeEach('Open Web',() => {
@@ -27,23 +32,17 @@ context('Booking Vehicle', () => {
         cy.wait(4000)
     })
 
-    it('Do Search Car', () =>{
-        // To Page Bandingkan Mobil
-        cy.get(':nth-child(12) > .categoryContainer').click()
+    it('Do Check Status Booking Service If Found', () =>{
+        // To Page Tracking Order
+        cy.get(':nth-child(11) > .categoryContainer').click()
 
-        // Input Search
-        cy.get('#js-site-search-input').type('Avanza{enter}')
+        // Type ID Booking
+        cy.get('#pkb-no-input').type(idOrderData.id)
 
-        // Check Result
-        cy.get('.plp-name').contains('AVANZA')
-        cy.wait(400)
+        // Button Cek Status
+        cy.get('.btn-check-status-service').click()
+        cy.wait(6000)
     })
 
-    // it('Do Search By Filter', () =>{
-        
-    // })
-
-    // it('Do Compare Car', () =>{
-        
-    // })
+    // it('Do Check Status Booking Service If Not Found')
 })

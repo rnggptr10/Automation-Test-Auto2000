@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-context('Booking Vehicle', () => {
+context('Order Suku Cadang', () => {
     const userData = {
         "email": "ranggaputra103@gmail.com",
         "password": "sayangkamu8"
@@ -17,6 +17,7 @@ context('Booking Vehicle', () => {
         "tanggal_booking" : ":nth-child(4) > :nth-child(7) > .ui-state-default", 
         "jam_booking" : "8:00"
     }
+    
     beforeEach('Open Web',() => {
         // For Set Size Desktop
         cy.viewport(1280,720)
@@ -44,7 +45,7 @@ context('Booking Vehicle', () => {
         /*************************
          *         FORM
         **************************/
-    
+     
         /*************************
          *   Detail Mobil Anda
         **************************/
@@ -82,5 +83,8 @@ context('Booking Vehicle', () => {
 
         // Button 'Kirim'
         cy.get('.ca-submit > .btn-primary-white').click()
+
+        // URL Saat ini harus berbeda dengan sebelumnya
+        cy.url().should('not.eq', 'https://uat.auto2000.co.id/services-toyota/suku-cadang')
     })
 })
