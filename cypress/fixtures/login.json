@@ -1,0 +1,27 @@
+[
+    {
+        "name_case":"Do Login With Null Values",
+        "email" : "",
+        "password" : ""
+    },
+    {
+        "name_case":"Do Login With Wrong Values (Email)",
+        "email": "ranggaputra111@gmail.com",
+        "password":"sayangkamu8"
+    },
+    {
+        "name_case":"Do Login With Wrong Values (Password)",
+        "email": "ranggaputra103@gmail.com",
+        "password":"sayangkamu86"
+    },
+    {
+        "name_case":"Do Login With Wrong Values (Email & Password)",
+        "email":"ranggaputra111@gmail.com",
+        "password":"sayangkamu86"
+    },
+    {
+        "name_case":"Do Login With Correct Values",
+        "email":"ranggaputra103@gmail.com",
+        "password":"sayangkamu8"
+    }
+]

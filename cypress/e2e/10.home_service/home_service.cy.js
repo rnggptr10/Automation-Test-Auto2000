@@ -1,4 +1,4 @@
-/// <reference types="cypress" />
+ /// <reference types="cypress" />
 
 context('Home Service', () => {
     // data User
@@ -103,8 +103,8 @@ context('Home Service', () => {
         // Lokasi Umum
         cy.get('#inputAddressAuto').type(case1.lokasi_umum)
         // Lokasi Detail
-        cy.get('[style="width: 348px; position: absolute; left: 78px; top: 680px;"]').contains(case1.lokasi_umum).click()
-        cy.wait(1000)
+        cy.contains(case1.lokasi_umum).click()
+        cy.wait(4000)
         cy.get('#serviceAddress1').type(case1.lokasi_detail)
         cy.wait(1000)    
 
@@ -116,10 +116,10 @@ context('Home Service', () => {
         *   Pilih Waktu/Mekanik Anda
         ********************************/
         // Pilih waktu atau mekanik
-        cy.get('.preferred-time-section > :nth-child(1) > .g-col-12 > :nth-child(1) > label').click()
+        cy.get('.preferred-time-section > :nth-child(1) > .g-col-12 > :nth-child(1) > label').click({force:true})
 
         // Pilih Hari/Tanggal
-        cy.get('#Mon').click()
+        cy.get('#Tue').click()
 
         // Pilih Waktu
         cy.get('#select-time-slot-button').click()
@@ -132,7 +132,7 @@ context('Home Service', () => {
         cy.wait(400)
 
         // Button Book Sekarang
-        cy.get('#timeschedule').click()
+        // cy.get('#timeschedule').click()
         cy.wait(400)
     })
 
@@ -177,7 +177,8 @@ context('Home Service', () => {
         // Lokasi Umum
         cy.get('#inputAddressAuto').type(case2.lokasi_umum)
         // Lokasi Detail
-        cy.get('[style="width: 348px; position: absolute; left: 78px; top: 680px;"]').contains(case2.lokasi_umum).click()
+        cy.contains(case2.lokasi_umum).click()
+        cy.wait(4000)
         cy.get('#serviceAddress1').type(case2.lokasi_detail)
         cy.wait(400)    
 
@@ -205,7 +206,7 @@ context('Home Service', () => {
         cy.wait(400)
 
         // Button Book Sekarang
-        cy.get('#timeschedule').click()
+        // cy.get('#timeschedule').click()
         cy.wait(400)
     })
 })

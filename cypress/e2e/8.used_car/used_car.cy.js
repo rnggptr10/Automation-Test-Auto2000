@@ -41,10 +41,12 @@ context('Used Car', () => {
         cy.get(':nth-child(6) > .categoryContainer').click()
 
         // Search
-        cy.get('#js-site-search-input').type('TOYOTA FORTUNER 2.5 G AT' + '{enter}')
+        cy.get('#js-site-search-input').type('RUSH' + '{enter}')
 
         // Check Result
-        cy.contains('TOYOTA FORTUNER 2.5 G AT')
+        cy.contains('RUSH')
+        // cy.contains('TOYOTA FORTUNER 2.5 G AT')
+        cy.wait(2000)
     })
 
     it('Do Search By Filter', () =>{

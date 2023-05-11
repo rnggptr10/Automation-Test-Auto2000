@@ -16,16 +16,23 @@ module.exports = defineConfig({
       screenshotOnRunFailure = true;
       require('cypress-mochawesome-reporter/plugin')(on);
     },
-
+    
     // urutan running file
     specPattern: [
+      // Home Service
+      'cypress/e2e/10.home_service/home_service.cy.js',
+      
       // login
       'cypress/e2e/1.authentication/login.cy.js',
-
+      
+      // register
+      'cypress/e2e/1.authentication/register.cy.js',
+      
       // profile
       'cypress/e2e/2.profile/profile-saya/profile_saya.cy.js',
       'cypress/e2e/2.profile/my-car/my_car.cy.js',
       // 'cypress/e2e/2.profile/beranda/beranda.cy.js',
+      
 
       // Mobil Baru
       'cypress/e2e/3.mobil_baru/mobil_baru.cy.js',
@@ -42,36 +49,29 @@ module.exports = defineConfig({
       // Suku Cadang (Terdapat Bug)
       'cypress/e2e/9.order-suku-cadang/order_suku_cadang.cy.js',
 
-      // kupon service (?)
+      // kupon service
       'cypress/e2e/5.kupon_service/kupon_service.cy.js',
       
       // Body Paint
-      'cypress/e2e/15.body_paint/body_paint.cy.js',
+      'cypress/e2e/14.body_paint/body_paint.cy.js', 
 
       // Paket Service
       'cypress/e2e/7.paket_service/paket_service.cy.js',
 
       // Tracking Order
       'cypress/e2e/13.tracking_order/tracking_order.cy.js',
-
-
-      // Bandingkan Mobil
-
-
-      // Test Drive
-      // 'cypress/e2e/11.test_drive/test_drive.cy.js',
-
-
-      // Home Service
-      // 'cypress/e2e/10.home_service/home_service.cy.js',
+      
+      // Cubain
+      'cypress/e2e/15.cubain/cubain.cy.js',
+      
+      // Test Drive 
+      'cypress/e2e/11.test_drive/test_drive.cy.js',
 
       // Workshop Service 
-      // 'cypress/e2e/4.workshop_service/workshop_service.cy.js',
-
-
-
-      // Testing
-      // 'cypress/e2e/Testing/test.cy.js',
+      'cypress/e2e/4.workshop_service/workshop_service.cy.js',
+      
+      // Action Navbar
+      'cypress/e2e/navbar/navbar_action.cy.js',
     ]
   },
 });

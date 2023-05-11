@@ -57,7 +57,7 @@ context('Trade In', () => {
         "kota" : "Jakarta Pusat",
         "alamat": "Jalan Raya Slipi",
         "alamat_detail" : "Blok Gv.28",
-        "tanggal" : ":nth-child(1) > :nth-child(6) > .ui-state-default",
+        "tanggal" : ":nth-child(4) > :nth-child(6) > .ui-state-default",
         "jam" : "08:30"
     }
 

@@ -1,0 +1,181 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-05-04T03:10:10.170Z",
+    "end": "2023-05-04T03:11:22.786Z",
+    "duration": 72616,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e08e8c2e-4a70-4d91-a2dd-5c70ac0c293d",
+      "title": "",
+      "fullFile": "cypress\\e2e\\1.authentication\\login.cy.js",
+      "file": "cypress\\e2e\\1.authentication\\login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a9475d38-f596-4e09-9555-39a79139b004",
+          "title": "Fitur Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Do Login With Null Values",
+              "fullTitle": "Fitur Login Do Login With Null Values",
+              "timedOut": null,
+              "duration": 6902,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "if (data.email != \"\" && data.password != \"\") {\n  cy.get('#login-email').type(data.email);\n  cy.wait(400);\n  cy.get('#login-password').type(data.password);\n  cy.wait(400);\n  cy.get('#btn-login').click();\n  cy.wait(4000);\n} else {\n  cy.get('#btn-login').should('be.visible');\n}",
+              "err": {},
+              "uuid": "caf08d4e-11c3-453f-b4d9-ac66a7c572f5",
+              "parentUUID": "a9475d38-f596-4e09-9555-39a79139b004",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Do Login With Wrong Values (Email)",
+              "fullTitle": "Fitur Login Do Login With Wrong Values (Email)",
+              "timedOut": null,
+              "duration": 18500,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "if (data.email != \"\" && data.password != \"\") {\n  cy.get('#login-email').type(data.email);\n  cy.wait(400);\n  cy.get('#login-password').type(data.password);\n  cy.wait(400);\n  cy.get('#btn-login').click();\n  cy.wait(4000);\n} else {\n  cy.get('#btn-login').should('be.visible');\n}",
+              "err": {},
+              "uuid": "69b7821a-4a0a-48bb-b7a1-2aed6b94bef5",
+              "parentUUID": "a9475d38-f596-4e09-9555-39a79139b004",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Do Login With Wrong Values (Password)",
+              "fullTitle": "Fitur Login Do Login With Wrong Values (Password)",
+              "timedOut": null,
+              "duration": 11791,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "if (data.email != \"\" && data.password != \"\") {\n  cy.get('#login-email').type(data.email);\n  cy.wait(400);\n  cy.get('#login-password').type(data.password);\n  cy.wait(400);\n  cy.get('#btn-login').click();\n  cy.wait(4000);\n} else {\n  cy.get('#btn-login').should('be.visible');\n}",
+              "err": {},
+              "uuid": "52ffde7c-165f-40da-b945-b28e5febc152",
+              "parentUUID": "a9475d38-f596-4e09-9555-39a79139b004",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Do Login With Wrong Values (Email & Password)",
+              "fullTitle": "Fitur Login Do Login With Wrong Values (Email & Password)",
+              "timedOut": null,
+              "duration": 12468,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "if (data.email != \"\" && data.password != \"\") {\n  cy.get('#login-email').type(data.email);\n  cy.wait(400);\n  cy.get('#login-password').type(data.password);\n  cy.wait(400);\n  cy.get('#btn-login').click();\n  cy.wait(4000);\n} else {\n  cy.get('#btn-login').should('be.visible');\n}",
+              "err": {},
+              "uuid": "9b202515-cfc7-4a65-90d7-f5ca2abd1dbd",
+              "parentUUID": "a9475d38-f596-4e09-9555-39a79139b004",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Do Login With Correct Values",
+              "fullTitle": "Fitur Login Do Login With Correct Values",
+              "timedOut": null,
+              "duration": 20533,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "if (data.email != \"\" && data.password != \"\") {\n  cy.get('#login-email').type(data.email);\n  cy.wait(400);\n  cy.get('#login-password').type(data.password);\n  cy.wait(400);\n  cy.get('#btn-login').click();\n  cy.wait(4000);\n} else {\n  cy.get('#btn-login').should('be.visible');\n}",
+              "err": {},
+              "uuid": "376d71cc-59b8-4ab3-ad57-fc584d7a38ea",
+              "parentUUID": "a9475d38-f596-4e09-9555-39a79139b004",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "caf08d4e-11c3-453f-b4d9-ac66a7c572f5",
+            "69b7821a-4a0a-48bb-b7a1-2aed6b94bef5",
+            "52ffde7c-165f-40da-b945-b28e5febc152",
+            "9b202515-cfc7-4a65-90d7-f5ca2abd1dbd",
+            "376d71cc-59b8-4ab3-ad57-fc584d7a38ea"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 70194,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

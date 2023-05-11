@@ -31,7 +31,7 @@ context('Aksesoris', () => {
         "provinsi":"DKI Jakarta",
         "kota":"Jakarta Pusat",
         "cabang":"Auto2000 Garuda",
-        "tanggal":"#datepicker-accessories > .ui-datepicker-inline > .ui-datepicker-calendar > tbody > :nth-child(1) > :nth-child(6) > .ui-state-default",
+        "tanggal":"#datepicker-accessories > .ui-datepicker-inline > .ui-datepicker-calendar > tbody > :nth-child(4) > :nth-child(5) > .ui-state-default",
         "jam":"8:00"
     }
 
